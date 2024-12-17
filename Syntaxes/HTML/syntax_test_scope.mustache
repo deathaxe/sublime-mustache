@@ -2,7 +2,7 @@
 
     <script>
         var i = {{js.value}};
-#               ^^^^^^^^^^^^ meta.template.mustache source.js.embedded.html meta.template.mustage meta.embedded.variable.mustache
+#               ^^^^^^^^^^^^ meta.template.mustache source.js.embedded.html meta.template.mustage meta.embedded.expression.mustache
     </script>
 
     <script type="application/json">
@@ -10,15 +10,15 @@
             "{{json.key}}": "{{json.value}}",
         #   ^^^^^^^^^^^^^^ meta.template.mustache source.json.embedded.html meta.template.mustache meta.mapping.key.json
         #                   ^^^^^^^^^^^^^^^^ meta.template.mustache source.json.embedded.html meta.template.mustache meta.mapping.value.json meta.string.json
-        #    ^^^^^^^^^^^^ meta.embedded.variable.mustache
-        #                    ^^^^^^^^^^^^^^ meta.embedded.variable.mustache
+        #    ^^^^^^^^^^^^ meta.embedded.expression.mustache
+        #                    ^^^^^^^^^^^^^^ meta.embedded.expression.mustache
         }
     </script>
 
     <style>
         tr {
             color: {{css.color}};
-#                  ^^^^^^^^^^^^^ meta.template.mustache source.css.embedded.html meta.embedded.variable.mustache
+#                  ^^^^^^^^^^^^^ meta.template.mustache source.css.embedded.html meta.embedded.expression.mustache
         }
     </style>
 
@@ -26,7 +26,7 @@
 
     <div class="{{class.name}}"></div>
 #   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.template.mustache meta.tag.block.any.html
-#               ^^^^^^^^^^^^^^ meta.attribute-with-value.class.html meta.class-name.html meta.string.html meta.embedded.variable.mustache
+#               ^^^^^^^^^^^^^^ meta.attribute-with-value.class.html meta.class-name.html meta.string.html meta.embedded.expression.mustache
 #               ^^ punctuation.section.embedded.begin.mustache
 #                 ^^^^^ meta.path.mustache variable.other.object.mustache
 #                      ^ meta.path.mustache punctuation.accessor.dot.mustache
@@ -36,10 +36,10 @@
     <{{tag.name}} {{tag.attr.name}}={{tag.attr.value}} />
 #   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.template.mustache meta.tag.other.html
 #   ^ meta.tag.other.html punctuation.definition.tag.begin.html
-#    ^^^^^^^^^^^^ entity.name.tag.other.html meta.embedded.variable.mustache
-#                 ^^^^^^^^^^^^^^^^^ meta.attribute-with-value.html entity.other.attribute-name.html meta.embedded.variable.mustache
+#    ^^^^^^^^^^^^ entity.name.tag.other.html meta.embedded.expression.mustache
+#                 ^^^^^^^^^^^^^^^^^ meta.attribute-with-value.html entity.other.attribute-name.html meta.embedded.expression.mustache
 #                                  ^ meta.attribute-with-value.html punctuation.separator.key-value.html
-#                                   ^^^^^^^^^^^^^^^^^^ meta.attribute-with-value.html meta.string.html meta.embedded.variable.mustache
+#                                   ^^^^^^^^^^^^^^^^^^ meta.attribute-with-value.html meta.string.html meta.embedded.expression.mustache
 #                                                      ^^ punctuation.definition.tag.end.html
 
 ## Comments
@@ -205,7 +205,7 @@
 
     Hello {{name}}!
 #   ^^^^^^ meta.template.mustache - meta.embedded
-#         ^^^^^^^^ meta.template.mustache meta.embedded.variable.mustache
+#         ^^^^^^^^ meta.template.mustache meta.embedded.expression.mustache
 #                 ^^ meta.template.mustache - meta.embedded
 #         ^^ punctuation.section.embedded.begin.mustache
 #           ^^^^ variable.other.member.mustache
@@ -213,13 +213,13 @@
 
     # Ampersand Integer Interpolation
     {{&mph}} miles an hour!
-#   ^^^^^^^^ meta.template.mustache meta.embedded.variable.mustache
+#   ^^^^^^^^ meta.template.mustache meta.embedded.expression.mustache
 #   ^^ punctuation.section.embedded.begin.mustache
 #     ^ storage.modifier.mustache
 #      ^^^ meta.path.mustache variable.other.member.mustache
 
     {{ & . }}
-#   ^^^^^^^^^ meta.template.mustache meta.embedded.variable.mustache
+#   ^^^^^^^^^ meta.template.mustache meta.embedded.expression.mustache
 #   ^^ punctuation.section.embedded.begin.mustache
 #      ^ storage.modifier.mustache
 #        ^ variable.language.mustache
@@ -227,13 +227,13 @@
 
     # Data from parent context
     {{ . }}
-#   ^^^^^^^ meta.template.mustache meta.embedded.variable.mustache
+#   ^^^^^^^ meta.template.mustache meta.embedded.expression.mustache
 #   ^^ punctuation.section.embedded.begin.mustache
 #      ^ variable.language.mustache
 #        ^^ punctuation.section.embedded.end.mustache
 
     {{ foo.bar.baz }}
-#   ^^^^^^^^^^^^^^^^^ meta.template.mustache meta.embedded.variable.mustache
+#   ^^^^^^^^^^^^^^^^^ meta.template.mustache meta.embedded.expression.mustache
 #   ^^ punctuation.section.embedded.begin.mustache
 #      ^^^^^^^^^^^ meta.path.mustache
 #      ^^^ variable.other.object.mustache

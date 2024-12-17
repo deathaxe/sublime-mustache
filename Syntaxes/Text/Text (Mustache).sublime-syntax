@@ -104,7 +104,7 @@ contexts:
       set: mustache-unescaped-variable-body
 
   mustache-unescaped-variable-body:
-    - meta_scope: meta.embedded.variable.mustache
+    - meta_scope: meta.embedded.expression.mustache
     - match: \}\}\}
       scope: punctuation.section.embedded.end.mustache
       pop: 1
@@ -118,7 +118,7 @@ contexts:
       set: mustache-escaped-variable-body
 
   mustache-escaped-variable-body:
-    - meta_scope: meta.embedded.variable.mustache
+    - meta_scope: meta.embedded.expression.mustache
     - match: '{{mustache_tag_end}}'
       scope: punctuation.section.embedded.end.mustache
       pop: 1

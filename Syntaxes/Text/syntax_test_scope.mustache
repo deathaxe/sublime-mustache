@@ -163,7 +163,7 @@
 
     Hello {{name}}!
 #   ^^^^^^ meta.template.mustache - meta.embedded
-#         ^^^^^^^^ meta.template.mustache meta.embedded.variable.mustache
+#         ^^^^^^^^ meta.template.mustache meta.embedded.expression.mustache
 #                 ^^ meta.template.mustache - meta.embedded
 #         ^^ punctuation.section.embedded.begin.mustache
 #           ^^^^ variable.other.member.mustache
@@ -171,13 +171,13 @@
 
     # Ampersand Integer Interpolation
     {{&mph}} miles an hour!
-#   ^^^^^^^^ meta.template.mustache meta.embedded.variable.mustache
+#   ^^^^^^^^ meta.template.mustache meta.embedded.expression.mustache
 #   ^^ punctuation.section.embedded.begin.mustache
 #     ^ storage.modifier.mustache
 #      ^^^ meta.path.mustache variable.other.member.mustache
 
     {{ & . }}
-#   ^^^^^^^^^ meta.template.mustache meta.embedded.variable.mustache
+#   ^^^^^^^^^ meta.template.mustache meta.embedded.expression.mustache
 #   ^^ punctuation.section.embedded.begin.mustache
 #      ^ storage.modifier.mustache
 #        ^ variable.language.mustache
@@ -185,13 +185,13 @@
 
     # Data from parent context
     {{ . }}
-#   ^^^^^^^ meta.template.mustache meta.embedded.variable.mustache
+#   ^^^^^^^ meta.template.mustache meta.embedded.expression.mustache
 #   ^^ punctuation.section.embedded.begin.mustache
 #      ^ variable.language.mustache
 #        ^^ punctuation.section.embedded.end.mustache
 
     {{ foo.bar.baz }}
-#   ^^^^^^^^^^^^^^^^^ meta.template.mustache meta.embedded.variable.mustache
+#   ^^^^^^^^^^^^^^^^^ meta.template.mustache meta.embedded.expression.mustache
 #   ^^ punctuation.section.embedded.begin.mustache
 #      ^^^^^^^^^^^ meta.path.mustache
 #      ^^^ variable.other.object.mustache
