@@ -5,6 +5,6 @@ ${TM_TEMPLATE_INDENT}$0
 ${TM_TEMPLATE_START}/ ${1:variable} ${TM_TEMPLATE_END}
 ]]></content>
     <tabTrigger>if</tabTrigger>
-    <scope>meta.template.mustache</scope>
+    <scope>meta.template.mustache - meta.template.mustache meta.embedded</scope>
     <description>Mustache Section</description>
 </snippet>
