@@ -2,14 +2,14 @@
 
     <script>
         var i = {{js.value}};
-#               ^^^^^^^^^^^^ meta.template.mustache source.js.embedded.html meta.template.mustage meta.embedded.expression.mustache
+#               ^^^^^^^^^^^^ meta.template.mustache source.js.embedded.html meta.embedded.expression.mustache
     </script>
 
     <script type="application/json">
         {
             "{{json.key}}": "{{json.value}}",
-        #   ^^^^^^^^^^^^^^ meta.template.mustache source.json.embedded.html meta.template.mustache meta.mapping.key.json
-        #                   ^^^^^^^^^^^^^^^^ meta.template.mustache source.json.embedded.html meta.template.mustache meta.mapping.value.json meta.string.json
+        #   ^^^^^^^^^^^^^^ meta.template.mustache source.json.embedded.html meta.mapping.key.json
+        #                   ^^^^^^^^^^^^^^^^ meta.template.mustache source.json.embedded.html meta.mapping.value.json meta.string.json
         #    ^^^^^^^^^^^^ meta.embedded.expression.mustache
         #                    ^^^^^^^^^^^^^^ meta.embedded.expression.mustache
         }
