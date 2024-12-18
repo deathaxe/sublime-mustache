@@ -19,12 +19,11 @@ goto :usage
     set tag=v%version%
     set archive=%package%.sublime-package
     set assets="%archive%#%archive%"
-    call git tag -f %tag% %branch%
+    call git push origin %branch%
     call git archive --format zip -o "%archive%" %tag%
 
     :: create github release (on master branch using latest tag)
-    call git push origin %tag%
-    gh release create --target %branch% -t "%package% %version%" "%tag%" %assets%
+    gh release create --target %branch% -t "v%version%" "%tag%" %assets%
     del /f /q *.sublime-package
     git fetch
     goto :eof
